@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, AnimatePresence, useInView, animate } from "framer-motion";
-import { Leaf, Heart, Baby, Utensils, ChefHat, User, Briefcase, GraduationCap, ArrowRight, Play, Mail, Menu, X, CheckCircle2 } from "lucide-react";
+import { Leaf, Heart, Baby, Utensils, ChefHat, User, Briefcase, GraduationCap, ArrowRight, Play, Mail, Menu, X, CheckCircle2, BedDouble, Star } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -26,7 +26,7 @@ const BRAND = {
 const easePremium = [0.16, 1, 0.3, 1] as any;
 
 // Reusable component for character/word staggered reveal
-const RevealText = ({ children, className }: { children: string, className?: string }) => {
+export const RevealText = ({ children, className }: { children: string, className?: string }) => {
   const words = children.split(" ");
   return (
     <motion.div 
@@ -110,7 +110,7 @@ const Hero = () => {
               </motion.div>
               
               <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-black text-gray-900 mb-8 tracking-tight leading-[1.05]">
-                <RevealText className="justify-center lg:justify-start">Redefining</RevealText>
+                <RevealText className="justify-center lg:justify-start">Complete</RevealText>
                 <span className="relative inline-block mt-2 md:mt-1">
                   <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#6d519d] to-[#8c6ec3]">Postnatal Care</span>
                   <motion.span 
@@ -121,7 +121,7 @@ const Hero = () => {
                   />
                 </span>
                 <br />
-                <RevealText className="justify-center lg:justify-start">With Warmth</RevealText>
+                <RevealText className="justify-center lg:justify-start">Solution</RevealText>
               </h1>
               
               <motion.p 
@@ -355,6 +355,85 @@ const Stats = () => {
   );
 };
 
+const MedicalGuidance = () => {
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: easePremium }}
+            className="lg:w-1/2 relative"
+          >
+            <div className="w-full aspect-square rounded-[4rem] bg-gradient-to-br from-[#6d519d]/10 to-[#51C4D3]/10 overflow-hidden relative border border-gray-100 shadow-2xl group">
+              <img 
+                src="/Dr-Aparna-Nath.jpeg" 
+                alt="Dr. Aparna Nath" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6d519d]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-10 left-10 right-10 bg-white/80 backdrop-blur-md p-8 rounded-3xl border border-white/50 shadow-xl">
+                <h3 className="text-2xl font-bold text-gray-900">Dr. Aparna Nath</h3>
+                <p className="text-[#6d519d] font-bold uppercase tracking-widest text-sm mb-2">Lead Medical Consultant</p>
+                <p className="text-gray-500 text-sm leading-relaxed">Expert guidance ensuring the highest medical standards for you and your baby.</p>
+              </div>
+            </div>
+          </motion.div>
+          
+          <div className="lg:w-1/2">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm uppercase tracking-[0.3em] text-[#51C4D3] font-bold mb-4"
+            >
+              Medical Excellence
+            </motion.p>
+            <h2 className="text-4xl md:text-6xl font-serif text-gray-900 mb-8 leading-tight">Expert Medical Guidance</h2>
+            <p className="text-xl text-gray-600 mb-10 font-light leading-relaxed">
+              At TenderBliss, we combine traditional Ayurvedic wisdom with modern medical expertise. Under the guidance of Dr. Aparna Nath, our team ensures that every mother and baby receives personalized, safe, and compassionate care.
+            </p>
+            
+            <div className="space-y-6 mb-12">
+              {[
+                "Comprehensive health monitoring for mothers",
+                "Newborn health assessment and tracking",
+                "Evidence-based postnatal protocols",
+                "24/7 medical support team"
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="flex items-center gap-4"
+                >
+                  <div className="w-6 h-6 rounded-full bg-[#51C4D3]/20 flex items-center justify-center">
+                    <CheckCircle2 className="w-4 h-4 text-[#51C4D3]" />
+                  </div>
+                  <span className="text-gray-700 font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.a 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/contact"
+              className="px-10 py-4 rounded-full bg-gray-900 text-white font-bold text-lg shadow-xl shadow-gray-900/20 hover:bg-[#6d519d] transition-all inline-block"
+            >
+              Book a Consultation
+            </motion.a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Features = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -444,7 +523,7 @@ const Features = () => {
         </div>
         
         {/* Premium Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:auto-rows-[300px]">
           
           {/* Newborn Care - Large Left (span 2 rows) */}
           <Link href="/services/newborn-care" className="feature-card md:row-span-2 p-10 md:p-14 rounded-[2.5rem] bg-gradient-to-br from-[#6d519d] to-[#4b3573] text-white shadow-2xl shadow-[#6d519d]/20 relative overflow-hidden group block cursor-pointer">
@@ -544,7 +623,42 @@ export default function Home() {
     <main className="font-sans selection:bg-[#51C4D3]/30 selection:text-[#6d519d]">
       <Hero />
       <Stats />
+      <MedicalGuidance />
       <Features />
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <RevealText className="text-4xl md:text-6xl font-serif text-gray-900 mb-12 justify-center">Luxurious Sanctuaries</RevealText>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1600px] mx-auto">
+            {[
+              { name: "Bliss Cozy Stay", type: "Essential Comfort" },
+              { name: "Bliss Comfort Suite", type: "Signature Wellness", popular: true },
+              { name: "Bliss Divine Care", type: "Family Wellness" },
+              { name: "Bliss Royale Suite", type: "Ultimate Luxury" }
+            ].map((pkg, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -10 }}
+                className="p-6 md:p-8 rounded-[2.5rem] border border-gray-100 bg-[#faf9f8] hover:bg-white hover:shadow-2xl transition-all duration-500 relative"
+              >
+                {pkg.popular && (
+                  <div className="absolute top-4 right-4 z-20">
+                    <div className="flex items-center gap-1 py-1 px-3 rounded-full bg-gradient-to-r from-[#51C4D3] to-[#3aa2b1] text-white shadow-lg shadow-[#51C4D3]/20">
+                      <Star className="w-2.5 h-2.5 fill-current" />
+                      <span className="text-[8px] font-black uppercase tracking-widest">Popular</span>
+                    </div>
+                  </div>
+                )}
+                <div className="w-12 h-12 rounded-2xl bg-[#6d519d]/10 flex items-center justify-center text-[#6d519d] mb-6 mx-auto">
+                  <BedDouble className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
+                <p className="text-gray-500 text-sm mb-6">{pkg.type}</p>
+                <Link href="/packages" className="text-[#51C4D3] font-bold text-sm uppercase tracking-widest hover:text-[#6d519d] transition-colors">Details →</Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
       <CareerCTA />
     </main>
   );

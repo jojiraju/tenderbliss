@@ -36,20 +36,21 @@ export const Footer = () => (
           <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
           <ul className="space-y-4 font-light">
             <li><Link href="/#home" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Home</Link></li>
-            <li><Link href="/#services" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Services</Link></li>
-            <li><Link href="/#careers" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Careers</Link></li>
-            <li><Link href="/#about" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> About Us</Link></li>
+            <li><Link href="/services" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Services</Link></li>
+            <li><Link href="/moments" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Moments</Link></li>
+            <li><Link href="/packages" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Packages</Link></li>
+            <li><Link href="/career" className="hover:text-[#51C4D3] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform"/> Careers</Link></li>
           </ul>
         </div>
 
         {/* Services */}
         <div>
-          <h4 className="text-white font-bold text-lg mb-6">Our Services</h4>
+          <h4 className="text-white font-bold text-lg mb-6">Our Specialities</h4>
           <ul className="space-y-4 font-light">
-            <li><Link href="/services/newborn-care" className="hover:text-[#6d519d] transition-colors">Newborn Care</Link></li>
-            <li><Link href="/services/ayurvedic-therapy" className="hover:text-[#6d519d] transition-colors">Ayurvedic Therapy</Link></li>
-            <li><Link href="/services/maternal-recovery" className="hover:text-[#6d519d] transition-colors">Maternal Recovery</Link></li>
-            <li><Link href="/services/nutritious-diet" className="hover:text-[#6d519d] transition-colors">Nutritious Diet</Link></li>
+            <li><Link href="/services" className="hover:text-[#6d519d] transition-colors">General Packages</Link></li>
+            <li><Link href="/services" className="hover:text-[#6d519d] transition-colors">Special Packages</Link></li>
+            <li><Link href="/services" className="hover:text-[#6d519d] transition-colors">Fertility Management</Link></li>
+            <li><Link href="/services" className="hover:text-[#6d519d] transition-colors">Women Wellness</Link></li>
           </ul>
         </div>
 
@@ -59,7 +60,7 @@ export const Footer = () => (
           <ul className="space-y-4 font-light">
             <li className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-full bg-[#51C4D3]/10 flex items-center justify-center shrink-0 mt-0.5"><MapPin className="w-4 h-4 text-[#51C4D3]" /></div>
-              <span>TenderBliss Center,<br/>Mampad, Nilambur</span>
+              <span>Near Nayara Petrol Station,<br/>Tanah Mampad, Nilambur,<br/>Kerala 676542</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-[#51C4D3]/10 flex items-center justify-center shrink-0"><Phone className="w-4 h-4 text-[#51C4D3]" /></div>
@@ -67,7 +68,7 @@ export const Footer = () => (
             </li>
             <li className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-[#51C4D3]/10 flex items-center justify-center shrink-0"><Mail className="w-4 h-4 text-[#51C4D3]" /></div>
-              <span>hello@tenderbliss.com</span>
+              <span>tenderblissgroup@gmail.com</span>
             </li>
           </ul>
         </div>
@@ -75,7 +76,7 @@ export const Footer = () => (
       </div>
 
       <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm font-light text-gray-500">© {new Date().getFullYear()} TenderBliss Postnatal Wellness Center. All rights reserved.</p>
+        <p className="text-sm font-light text-gray-500">© {new Date().getFullYear()} TenderBliss Postnatal Wellness Centre. All rights reserved.</p>
         <div className="flex gap-6 text-sm font-light text-gray-500">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

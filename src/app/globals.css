@@ -9,6 +9,24 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-outfit), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+
+  --color-brand-purple: #6d519d;
+  --color-brand-purple-light: #8c6ec3;
+  --color-brand-cyan: #51C4D3;
+  --color-brand-cyan-light: #7ce0ed;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-brand-purple)] to-[var(--color-brand-cyan)];
+  }
 }
 
 body {

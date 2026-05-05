@@ -114,17 +114,21 @@ export const Navigation = () => {
               Home
               <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${activeSection === 'home' && pathname === "/" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
             </Link>
-            <Link href="/#services" className={`${activeSection === 'services' && pathname === "/" ? 'text-[#6d519d]' : 'hover:text-[#6d519d]'} transition-colors relative group`}>
+            <Link href="/services" className={`${pathname === "/services" ? 'text-[#6d519d]' : 'hover:text-[#6d519d]'} transition-colors relative group`}>
               Services
-              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${activeSection === 'services' && pathname === "/" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
+              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${pathname === "/services" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
             </Link>
-            <Link href="/#about" className={`${activeSection === 'about' && pathname === "/" ? 'text-[#6d519d]' : 'hover:text-[#6d519d]'} transition-colors relative group`}>
-              About Us
-              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${activeSection === 'about' && pathname === "/" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
+            <Link href="/moments" className={`${pathname === "/moments" ? 'text-[#6d519d]' : 'hover:text-[#6d519d]'} transition-colors relative group`}>
+              Moments
+              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${pathname === "/moments" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
             </Link>
-            <Link href="/career" className="hover:text-[#51C4D3] transition-colors relative group">
+            <Link href="/packages" className={`${pathname === "/packages" ? 'text-[#6d519d]' : 'hover:text-[#6d519d]'} transition-colors relative group`}>
+              Packages
+              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#6d519d] ${pathname === "/packages" ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
+            </Link>
+            <Link href="/career" className={`${pathname.startsWith("/career") ? 'text-[#51C4D3]' : 'hover:text-[#51C4D3]'} transition-colors relative group`}>
               Careers
-              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#51C4D3] group-hover:scale-x-100 scale-x-0 origin-left transition-transform`}></span>
+              <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#51C4D3] ${pathname.startsWith("/career") ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-left transition-transform`}></span>
             </Link>
           </div>
           
@@ -174,29 +178,35 @@ export const Navigation = () => {
               className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-[#51C4D3]/20 to-transparent rounded-full blur-3xl pointer-events-none"
             />
 
-            <div className="flex flex-col gap-6 text-4xl md:text-5xl font-black text-gray-400 pt-8 tracking-tight relative z-10">
+            <div className="flex flex-col gap-5 text-3xl md:text-4xl font-black text-gray-400 pt-4 tracking-tight relative z-10">
               <motion.div variants={itemVariants}>
-                <Link href="/#home" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-6 ${activeSection === 'home' && pathname === "/" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
-                  <span>Home</span>
-                  <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${activeSection === 'home' && pathname === "/" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>01</span>
+                <Link href="/#home" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-4 ${pathname === "/" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
+                   <span>Home</span>
+                   <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${pathname === "/" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>01</span>
                 </Link>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Link href="/#services" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-6 ${activeSection === 'services' && pathname === "/" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
-                  <span>Services</span>
-                  <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${activeSection === 'services' && pathname === "/" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>02</span>
+                <Link href="/services" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-4 ${pathname === "/services" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
+                   <span>Services</span>
+                   <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${pathname === "/services" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>02</span>
                 </Link>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Link href="/#about" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-6 ${activeSection === 'about' && pathname === "/" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
-                  <span>About Us</span>
-                  <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${activeSection === 'about' && pathname === "/" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>03</span>
+                <Link href="/moments" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-4 ${pathname === "/moments" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
+                   <span>Moments</span>
+                   <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${pathname === "/moments" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>03</span>
                 </Link>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Link href="/career" onClick={closeMenu} className="group flex items-center justify-between pb-6 hover:text-gray-900 transition-colors w-full">
+                <Link href="/packages" onClick={closeMenu} className={`group flex items-center justify-between border-b border-gray-200/50 pb-4 ${pathname === "/packages" ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
+                   <span>Packages</span>
+                   <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${pathname === "/packages" ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>04</span>
+                </Link>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <Link href="/career" onClick={closeMenu} className={`group flex items-center justify-between pb-4 ${pathname.startsWith("/career") ? 'text-gray-900' : ''} hover:text-gray-900 transition-colors w-full`}>
                   <span>Careers</span>
-                  <span className="text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-[#6d519d]">04</span>
+                  <span className={`text-sm font-bold opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 ${pathname.startsWith("/career") ? 'opacity-100 translate-x-0 text-[#6d519d]' : 'text-[#51C4D3]'}`}>05</span>
                 </Link>
               </motion.div>
             </div>

@@ -91,7 +91,7 @@ export default function Contact() {
 
             <motion.a 
               whileHover={{ scale: 1.02, y: -5 }}
-              href="mailto:info@tenderbliss.com"
+              href="mailto:tenderblissgroup@gmail.com"
               className="bg-white/80 backdrop-blur-xl border border-white p-8 rounded-[2rem] shadow-xl shadow-gray-200/50 flex items-start gap-6 group cursor-pointer"
             >
               <div className="w-16 h-16 rounded-2xl bg-[#6d519d]/10 flex items-center justify-center group-hover:bg-[#6d519d] transition-colors duration-300">
@@ -100,7 +100,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
                 <p className="text-gray-500 font-light mb-3">Drop us a line anytime.</p>
-                <p className="text-xl font-bold text-[#6d519d]">info@tenderbliss.com</p>
+                <p className="text-xl font-bold text-[#6d519d]">tenderblissgroup@gmail.com</p>
               </div>
             </motion.a>
 
@@ -114,7 +114,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Visit Us</h3>
                 <p className="text-gray-500 font-light mb-3">Our luxurious postnatal sanctuary.</p>
-                <p className="text-lg font-bold text-gray-900">Mampad, Nilambur<br/>Kerala, India</p>
+                <p className="text-lg font-bold text-gray-900 leading-tight">Near Nayara Petrol Station,<br/>Tanah Mampad, Nilambur,<br/>Kerala 676542</p>
               </div>
             </motion.div>
           </div>
