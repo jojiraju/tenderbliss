@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Tv, Wind, Users, Coffee, BedDouble, Star } from "lucide-react";
+import Link from "next/link";
 
 const packages = [
   {
@@ -108,9 +109,9 @@ export default function Packages() {
                 ))}
               </div>
 
-              <button className={`mt-auto w-full py-5 rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 ${pkg.dark ? 'bg-[#51C4D3] text-black hover:bg-white hover:shadow-[0_0_30px_rgba(81,196,211,0.4)]' : 'bg-gray-900 text-white hover:bg-[#6d519d] hover:shadow-[0_0_30px_rgba(109,81,157,0.3)]'}`}>
+              <Link href="/contact" className={`mt-auto w-full py-5 rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center ${pkg.dark ? 'bg-[#51C4D3] text-black hover:bg-white hover:shadow-[0_0_30px_rgba(81,196,211,0.4)]' : 'bg-gray-900 text-white hover:bg-[#6d519d] hover:shadow-[0_0_30px_rgba(109,81,157,0.3)]'}`}>
                 Enquire Now
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
