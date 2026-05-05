@@ -367,17 +367,17 @@ const MedicalGuidance = () => {
             transition={{ duration: 1, ease: easePremium }}
             className="lg:w-1/2 relative"
           >
-            <div className="w-full aspect-square rounded-[4rem] bg-gradient-to-br from-[#6d519d]/10 to-[#51C4D3]/10 overflow-hidden relative border border-gray-100 shadow-2xl group">
+            <div className="w-full aspect-[4/5] md:aspect-square rounded-[2rem] md:rounded-[4rem] bg-gradient-to-br from-[#6d519d]/10 to-[#51C4D3]/10 overflow-hidden relative border border-gray-100 shadow-2xl group">
               <img 
                 src="/Dr-Aparna-Nath.jpeg" 
                 alt="Dr. Aparna Nath" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6d519d]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-10 left-10 right-10 bg-white/80 backdrop-blur-md p-8 rounded-3xl border border-white/50 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900">Dr. Aparna Nath</h3>
-                <p className="text-[#6d519d] font-bold uppercase tracking-widest text-sm mb-2">Lead Medical Consultant</p>
-                <p className="text-gray-500 text-sm leading-relaxed">Expert guidance ensuring the highest medical standards for you and your baby.</p>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:bottom-10 md:left-10 md:right-10 bg-white/90 backdrop-blur-md p-5 sm:p-6 md:p-8 rounded-[1.5rem] md:rounded-3xl border border-white/50 shadow-xl">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 md:mb-0">Dr. Aparna Nath</h3>
+                <p className="text-[#6d519d] font-bold uppercase tracking-widest text-[10px] md:text-sm mb-2">Lead Medical Consultant</p>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-medium">Expert guidance ensuring the highest medical standards for you and your baby.</p>
               </div>
             </div>
           </motion.div>
